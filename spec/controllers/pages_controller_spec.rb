@@ -46,4 +46,17 @@ describe PagesController do
       response.should_not have_selector("title", text: "Ruby on Rails Tutorial Sample App | About Us")
     end
   end  
+
+  describe "GET help" do
+    it "returns http success" do
+      get 'help'
+      response.should be_success
+    end
+
+    # added not to pass the test!
+    it "should have the right title" do
+      get 'help'
+      response.should_not have_selector("title", text: "Ruby on Rails Tutorial Sample App | Help")
+    end
+  end  
 end
