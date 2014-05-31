@@ -15,4 +15,6 @@ describe UsersController do
     get 'new'
     response.should_not have_selector( "title", text: "Sign up")
   end
+  
+  
 end
