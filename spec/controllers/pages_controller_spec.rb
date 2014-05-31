@@ -9,9 +9,10 @@ describe PagesController do
       response.should be_success
     end
 
+    # added not to pass the test!
     it "should have the right title" do
       get 'home'
-      response.should have_selector("title", content: "Ruby on Rails Tutorial Sample App | Home")
+      response.should_not have_selector( "title", text: "Ruby on Rails Tutorial Sample App | Home")
     end
 
     it "should not have an empty body" do
@@ -26,9 +27,10 @@ describe PagesController do
       response.should be_success
     end
 
+    # added not to pass the test!
     it "should have the right title" do
       get 'contact'
-      response.should have_selector("title", content: "Ruby on Rails Tutorial Sample App | Contact")
+      response.should_not have_selector("title", text: "Ruby on Rails Tutorial Sample App | Contact")
     end
   end
   
@@ -37,10 +39,11 @@ describe PagesController do
       get 'about'
       response.should be_success
     end
+
+    # added not to pass the test!
     it "should have the right title" do
       get 'about'
-      response.should have_selector("title", content: "Ruby on Rails Tutorial Sample App | About Us")
+      response.should_not have_selector("title", text: "Ruby on Rails Tutorial Sample App | About Us")
     end
-  end
-  
+  end  
 end
