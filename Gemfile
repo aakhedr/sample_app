@@ -29,9 +29,6 @@ gem 'spring',        group: :development
 # Capybara
 gem 'capybara'
 
-#annotate
-gem 'annotate' 
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,9 +41,13 @@ gem 'annotate'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Factory Girl
+gem 'factory_girl_rails'
+
 group :development do
     gem 'autotest'
     gem 'rspec-rails'
+    gem 'annotate' 
 end
 
 group :test do
