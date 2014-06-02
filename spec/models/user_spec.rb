@@ -116,6 +116,47 @@ end
       @user.should respond_to :encrypted_password
     end
 
+    it 'should set the encrypted password attribute' do 
+      @user.encrypted_password.should_not be_blank
+    end
+    
+    it 'should have a salt attribute' do 
+      @user.should respond_to :salt
+    end
+    
+    describe 'authenticate method' do
+      it 'should have an authenticate method' do
+        User.should respond_to :authenticate
+      end
+
+      it 'should return nil if email is correct/ password is wrong' do
+        User.authenticate(@attr[:email], 'wrong_password').should be_nil
+      end
+
+      it 'should return nil if email is not in database/ password is correct' do
+        User.authenticate('hello@hello.com', @attr[:password]).should be_nil
+      end
+
+      it 'should return @user if email/ password match' do
+        User.authenticate(@attr[:email], @attr[:password]).should == @user
+      end
+
+    end
+    
+    
+    describe 'has_password?' do 
+      it 'should exist' do 
+        @user.should respond_to :has_password?
+      end
+
+      it 'should return true if passwords match' do 
+        @user.has_password?(@attr[:password]).should be_true
+      end
+
+      it 'should return false if passwords do not match' do 
+        @user.has_password?('invalid').should be_false
+      end
+    end
   end
 
 end
