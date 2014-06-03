@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Capybara
 gem 'capybara'
 
+# Gravatar image tag gem
+gem 'gravatar_image_tag'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

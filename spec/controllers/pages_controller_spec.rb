@@ -43,7 +43,7 @@ describe PagesController do
     # added not to pass the test!
     it "should have the right title" do
       get 'about'
-      response.should_not have_selector("title", :text => "Ruby on Rails Tutorial Sample App | About Us")
+      response.should_not have_selector("title", :text => "Ruby on Rails Tutorial Sample App | About us")
     end
   end  
 
