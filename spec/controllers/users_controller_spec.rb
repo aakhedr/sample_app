@@ -36,6 +36,12 @@ describe UsersController do
       get :show, :id => @user
       response.should_not have_selector('h1>img.gravatar')
     end
+
+    # commented out temporarily (same problem for have_selector)
+    # it 'should have the right URL' do
+    #   get :show, :id => @user
+    #   response.should have_selector("td>a", :text => user_path)
+    # end
   end
   
   describe "GET 'new'" do 
